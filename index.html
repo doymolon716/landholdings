@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Land Holdings Pi</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #5b21b6, #7c3aed);
+      color: white;
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .tagline {
+      font-size: 14px;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #5b21b6;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 55px 20px;
+      text-align: center;
+      background: linear-gradient(180deg, #ede9fe, #ffffff);
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      color: #4c1d95;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #4b5563;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 24px;
+      background: #f59e0b;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 18px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      color: #4c1d95;
+      margin-bottom: 25px;
+      font-size: 27px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card .icon {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #5b21b6;
+      margin-bottom: 8px;
+    }
+
+    .about {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #c4b5fd;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .pi-note {
+      margin-top: 18px;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🏡 Land Holdings Pi</div>
+    <div class="tagline">Properties • Land Development • Construction</div>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#properties">Properties</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="home">
+      <h1>Build Your Future with Land Holdings Pi</h1>
+
+      <p>
+        Discover properties, land opportunities, property sales,
+        land development and construction services through a
+        Pi-powered platform.
+      </p>
+
+      <a class="button" href="#properties">Explore Properties</a>
+    </section>
+
+    <section id="properties">
+      <h2>Property Opportunities</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🏠</div>
+          <h3>Residential Properties</h3>
+          <p>
+            Discover residential property opportunities
+            for homes and future investments.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌳</div>
+          <h3>Land for Sale</h3>
+          <p>
+            Explore available land suitable for
+            residential, commercial or development projects.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🏢</div>
+          <h3>Commercial Property</h3>
+          <p>
+            Find property opportunities for businesses,
+            offices and commercial development.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🏡</div>
+          <h3>Property Sales</h3>
+          <p>
+            Property listing and sales opportunities
+            using Pi-focused services.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📐</div>
+          <h3>Land Development</h3>
+          <p>
+            Planning and development opportunities
+            for land projects.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🏗️</div>
+          <h3>Construction Services</h3>
+          <p>
+            Connect with construction and
+            property development services.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h3>Property Opportunities</h3>
+          <p>
+            Connect property owners, buyers,
+            investors and development partners.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Land Holdings Pi</h2>
+
+      <div class="about">
+        <p>
+          Land Holdings Pi is designed as a Pi-powered platform
+          for real estate, land development, property sales and
+          construction services.
+        </p>
+
+        <br>
+
+        <p>
+          Our goal is to create a trusted digital space where
+          users can discover property opportunities and connect
+          with real estate and construction services.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+
+      <p>
+        Interested in a property or service?
+      </p>
+
+      <p>
+        Please contact the Land Holdings team for
+        available opportunities and further information.
+      </p>
+
+      <a class="button" href="mailto:landholdings.pi@gmail.com">
+        Contact Land Holdings
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+
+    <p>© 2026 Land Holdings Pi. All rights reserved.</p>
+
+    <p style="margin-top:12px;">
+      <a href="privacy.html">Privacy Policy</a>
+      |
+      <a href="terms.html">Terms of Service</a>
+    </p>
+
+    <p class="pi-note">
+      Designed for the Pi ecosystem.
+    </p>
+
+  </footer>
+
+</body>
+</html>
