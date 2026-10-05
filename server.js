@@ -17,6 +17,10 @@ app.get("/health", (req, res) => {
   });
 });
 
+app.get("/validation-key.txt", (req, res) => {
+  res.sendFile(__dirname + "/validation-key.txt");
+});
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Land Holdings Pi server running on port ${PORT}`);
 });
