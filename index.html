@@ -321,6 +321,84 @@
     version: "2.0",
     sandbox: true
   });
+</script><div style="text-align:center;margin:30px 0;">
+  <button id="pi-login"
+    style="padding:15px 25px;border:0;border-radius:10px;background:#5b21b6;color:white;font-size:18px;">
+    Login with Pi
+  </button>
+
+  <button id="pi-pay"
+    style="padding:15px 25px;border:0;border-radius:10px;background:#f59e0b;color:white;font-size:18px;margin-left:10px;">
+    Test Payment 1 Pi
+  </button>
+
+  <p id="pi-status">Pi Testnet payment setup</p>
+</div>
+
+<script>
+  document.getElementById("pi-login").onclick = function () {
+    Pi.authenticate(
+      ["username", "payments"],
+      function (payment) {
+        console.log("Incomplete payment:", payment);
+      }
+    ).then(function (auth) {
+      document.getElementById("pi-status").textContent =
+        "Logged in as @" + auth.user.username;
+    }).catch(function (error) {
+      document.getElementById("pi-status").textContent =
+        "Pi login error: " + error;
+    });
+  };
+
+  document.getElementById("pi-pay").onclick = function () {
+    Pi.createPayment(
+      {
+        amount: 1,
+        memo: "Land Holdings Pi Test Payment",
+        metadata: {
+          type: "test_payment"
+        }
+      },
+      {
+        onReadyForServerApproval: function (paymentId) {
+          fetch("/api/payments/approve", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              paymentId: paymentId
+            })
+          });
+        },
+
+        onReadyForServerCompletion: function (paymentId, txid) {
+          fetch("/api/payments/complete", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              paymentId: paymentId,
+              txid: txid
+            })
+          });
+        },
+
+        onCancel: function (paymentId) {
+          document.getElementById("pi-status").textContent =
+            "Payment cancelled.";
+        },
+
+        onError: function (error, payment) {
+          document.getElementById("pi-status").textContent =
+            "Payment error.";
+          console.log(error, payment);
+        }
+      }
+    );
+  };
 </script>
 
 </body>
